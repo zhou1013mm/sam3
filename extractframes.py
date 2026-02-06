@@ -7,7 +7,10 @@ stem = video_path.stem
 
 cap = cv2.VideoCapture(str(video_path))
 frames = []
-for i in range(6):
+start_frame = 55
+end_frame = 60
+cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
+for i in range(start_frame, end_frame + 1):
 	ok, frame = cap.read()
 	if not ok:
 		break
